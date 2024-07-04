@@ -8,8 +8,12 @@ CLICK ON EXE FILE AND INSTALL IT
 ===================================================
 STS IDE INSTALLATION
 ===========================================================
+https://spring.io/tools
+THEN GO TO Spring Tools 4 for Eclipse
+THEN CLICK WINDOWS X86_64
+IF ANY PROBLEM SEE THE YOUTUBE LINK
+=======================================================
 https://www.youtube.com/watch?v=P1N-RGJ2820
-https://spring.io/tools====choose  4.21.1-windows x86-64
 
 =============================================
 MYSQL INSTALLATION
