@@ -1,0 +1,216 @@
+https://github.com/arindamslt/AECTRAININGJULY2024BATCH1.git
+DATE:08.07.2024
+==================================================================
+FULL STACK DEVELOOMENT
+===================================================
+BACKEND
+FROND END
+DATABASE
+MAVEN
+==================================================
+MAVEN IS A BUILD TOOL.
+PURPOSE
+=========================================
+TO AUTOMATE PROJECT BUILDING PROCESS
+========================================================
+PROJECT BUILDING PROCESS
+===============================================
+1.DOWNLOAD LIBRARIES/JAR FILES
+2.COMPILE THE SOURCE CODE
+3.EXECUTE THE TEST CASES
+4.PACKAGE THE APPLICATION INTO JAR  FILES OR WAR FILES
+
+SET UP MAVEN
+==============================================
+1.COMMAND PROMPT
+2.IDE===STS,ECLIPSE,INTELLIJ
+==========================================================
+TERMINOLOGY
+===========================================================
+ARCHIETYPE====TYPES OF PROJECT ===QUICKSTART,WEB
+GROUPID====ORGANISATION NAME===com.aec
+ARTIFACTID===NAME OF THE PROJECT
+VERSION===SNAPSHOT  RELAEASE
+SNAPSHOT===UNDER DEVELOPING
+DEPENDENCY====LIBRARIES OR JAR FILES
+REPOSITORY===LOCATION WHERE THE JAR FILES ARE STORED
+ THREE TYPES
+==============================
+1.LOCAL===IT IS YOUR HDD
+2.CENTRAL====WEB/CLOUD
+3.REMOTE====IT IS THE COMPANY'S SERVER
+GOAL====PROCESS OF BUILDING THE PROJECT
+=================================================
+1.CLEAN
+2.COMPILE
+3.TEST
+4.PACKAGE
+======================================================
+pom.xml
+============================================
+IT IS CALLED THE HEART OF THE PROJECT
+pom===PROJECT OBJECT M ODEL
+PURPOSE
+===========================
+1.DEPENDENCY MANAGEMENT
+2.PLUG IN
+3.PROJECT MANAGEMENT
+4.PACKAGING
+TRANSITIVE DEPENDENCY
+================================
+PRACTICAL
+===================================================
+CREATE A NEW  MAVEN PROJECT
+===ADD  SPRING CONTEXT DEPENDENCY
+====CREATE THE JAR FILES
+
+THEN ADD LOMBOK DEPENDENCY
+CLEAN IT AND CREATE THE NEW JAR FILES
+==========================================================
+LOMBOK INSTALLATION
+============================================================
+C:\Users\arins\.m2\repository\org\projectlombok\lombok
+=====================================================================================
+SPRING
+======================================================================================
+TYPES OF APPLICATION
+======================================================================
+DESKTOP APPLICATION=====CORE JAVA,AWT,SWING,SPRING          ====.JAR FILE
+WEB APPLICATION=========SERVLET,JSP,TOMCAT,SPRING            =====.WAR FILE
+ENTERPRISE APPLICATION====EJB,SPRING                         =====.EAR FILE(JAR+WAR)
+
+SPRING
+=========================================================================
+SPRING IS AN OPEN SOURCE LIGHT WEIGHT DEPENDENCY INJECTION BASED FRAMEWORK SOFTWARE
+TO  DEVELOP JAVA/JEE BASED ENTERPRISE APPLICATION
+HEAVY WEIGHT 
+====================================
+
+.java=====compiler====.class====CONTAINER====.java===.class==O/P
+LIGHT WEIGHT
+==================
+.java===compiler===.class===container===.class===O/P
+LIGHT WEIGHT APPLICATION
+=====================================================
+POJO CLASS
+POJO
+========================
+PLAIN OLD JAVA OBJECT
+GETTER()
+SETTER()
+CONSTRUCTOR()
+PARAMETERISED CONSTRUCTOR()
+
+2.USE XML FILE/ANNOTATION
+FRAMEWORK
+================================================================================
+TECHNOLOGIES
+DBMS===JDBC API
+MAILING===JAVA MAIL
+MESSAGING===JMS/KAFKA
+
+DESIGN PATTERN
+==============================================================
+WELL APPROVED SOLUTION
+FRAMEWORK===TECHNPLOGIES+DESIGN PATTERN
+FRAMEWORK====IN BUILD CLASSES AND INTERFACES AND DESIGN PATTERN
+PURPOSE
+=================================
+RAD===RAPID APPLICATION DEVELOPMENT
+FEATURES OF THE SPRING
+===========================================
+1.IT IS USED FOR WEB/DISTRIBUTED APPLICATION
+2.IT SUPPORT CONTAINER SYSTEM
+1.SCAN THE CLASSES(SPRING BEAN)
+2.CREATE THE OBJECT
+3.PROVIDE THE DATA
+4.LINKING BETWEEN THE OBJECT
+
+ROLE OF DEVELOPER
+=======================
+
+
+DEPENDENCY
+=========================================================================
+
+class Test
+{
+  private String id;//instance variable
+  private String name;
+public void add()
+{
+   int a;//local variable
+}
+}
+THE INSTANCE VARIBALE IN CASE OF SPRING BEAN ARE CALLED DEPENDENCY
+TYPES OF DEPENDENCY
+=====================
+PRIMITIVE TYPE===int,float,double,char,bytes
+COLLECTION TYPE==List,Set,Map,Properties
+REFERENCE TYPE===OBJECT VARIABLE
+INJECTION
+===========================
+PROVIDE/UPDATE DATA TO THE DEPENDENCY CALLED DEPENDENCY INJECTION
+TYPES OF DEPENDENCY INJECTION
+===================================
+1.SETTER INJECTION
+2.METHOD INJECTION
+3.CONSTRUCTOR INJECTION
+4.LOOK UP METHOD INJECTION
+5.INTERFACE INJECTION
+========================================================
+MODULES IN SPRING
+==============================
+1.SPRING CORE
+2.SPRING DAO
+3.SPRING ORM
+4.SPRING AOP
+5.SPRING CONTEXT
+6.SPRING WEB====  SPRING WEB MVC
+7.SPRING MVC===
+SPRING CORE
+========================================
+THE RULES AND GUIDELINES GIVEN BY SPRING FRAMEWORK
+SPRING BEAN===CLASS+RULES GIVEN BY SPRING CORE
+===============================================
+RULES
+==========================================================
+1.CLASS SHOULD BE PUBLIC
+2.DEPENDENCY ARE PRIVATE
+3.GETTER()
+4.SETTER()
+5.CONSTRUCTOR()
+6.PARAMETERISED CONSTRUCTOR
+7.toString()
+8.equals()
+9.hashCode()
+ANNOTATION
+===================================
+1.STEREO TYPE OF ANNOTATION
+2.BASIC ANNOTATION
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
