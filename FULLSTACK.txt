@@ -187,8 +187,461 @@ RULES
 ANNOTATION
 ===================================
 1.STEREO TYPE OF ANNOTATION
+@Component============CREATE THE OBJECT IN THE SPRING CONTAINER
 2.BASIC ANNOTATION
+@ComponentScan=========SCAN THE BASE PACKAGES
+@Value=================ASSING DATA TO THE DEPENDENCY
+@propertySource=====ACCESSING DATA FROM PROPERTIES FILE
+LOMBOK
+====================================
+@Data===getter(),setter(),toString()
+@NoArgsConstructor
+@AllArgsConstructor
 
+DATE:09.07.2024
+====================================================================================
+PREREQUISITE:DBMS,RDBMS
+DBMS
+========================================================================
+DATABASE MANAGEMENT SYSTEM
+DATABASE:COLLECTION OF TABLES OR INTERRELATED DATA
+
+DBMS==DATABASE+SQL
+SQL==STRUCTURED QUERY LANGUGAE
+ADVANTAGE OF DBMS
+============================
+1.DATA REDUNDENCY MINIMIZED
+2.SECURITY RESTRICTION IS THERE
+3.DATA CAN BE SHARED
+4.INTRIGRITY CONSTRAINT
+
+RDBMS SOFTWARE
+=======================
+MYSQL,ORACLE,SYBASE,SQLSERVER,POSTGRESQL
+
+SQL==4TH GENERATION LANGUAGE
+   ===NON PROCEDURAL LANGUAGE
+3RD GEN===HOW PART,WHAT PART
+4TH GEN==HOW PART IS NOT KNOWN TO US
+         ONLY WHAT PART IS KNOWN TO US
+SQL COMMAND
+==============================================================
+DDL==DATA DEFINATION LANGUAGE
+==============================
+CREATE,ALTER,RENAME,DROP,TRUNCATE
+DML==DATA MANIPULATION LANGUAGE
+=======================================
+INSERT,UPDATE,DELETE,MERGE
+DATA RETRIEVAL
+=============================
+SELECT
+TCL==TRANSACTION CONTROL LANGUAGE
+==============================================
+COMMIT,ROLLBACK,SAVEPOINT
+DCL==DATA CONTROL LANGUAGE
+======================================
+GRANT,REVOKE
+LOGIN IN MYSQL
+=====================
+1.COMMAND PROMPT
+2.MYSQL COMMANDLINE CLIENT
+3.MYSQL WORKBENCH
+DATA TYPES IN MYSQL
+=======================
+VARCHAR=-==ALPHANUMERIC
+CHAR
+NUMBER
+DECIMAL
+DATE
+TIMESTAMP
+=======================================================
+CONSTRAINT
+==================================================
+BEFORE INSERTING ANY ROW OF A TABLE YOU HAVE TO SATISFY CERTAIN RULES AND REGULATIONS CALLED CONSTRAINT
+TYPES OF CONSTRAINT
+============================================
+PRIMARY KEY===DOESN'T ALLOW DUPLICATE VALUE AS WELL AS NULL VALUE
+NOT  NULL=== IT CAN'T ACCEPT NULL VALUE
+UNIQUE KEY==DOESN'T ACCEPT DUPLICATE VALUE BUT ACCEPT NULL VALUE
+CHECK CONSTRAINTS
+FOREIGN KEY===IT WILL SUPPORT OTHER TABLE PRIMARY KEY VALUE ONLY
+
+Enter password: *******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 264
+Server version: 8.0.35 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| abs                |
+| aec                |
+| aiem               |
+| aiem1              |
+| bootdb             |
+| bootreact          |
+| dbs                |
+| fdapps             |
+| foodapp            |
+| foodapps           |
+| fooddb             |
+| hbdb               |
+| hbdbs              |
+| information_schema |
+| mysql              |
+| performance_schema |
+| restdb             |
+| sys                |
+| test               |
+| testdb             |
+| testing            |
++--------------------+
+21 rows in set (0.02 sec)
+
+mysql> CREATE DATABASE TST;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| abs                |
+| aec                |
+| aiem               |
+| aiem1              |
+| bootdb             |
+| bootreact          |
+| dbs                |
+| fdapps             |
+| foodapp            |
+| foodapps           |
+| fooddb             |
+| hbdb               |
+| hbdbs              |
+| information_schema |
+| mysql              |
+| performance_schema |
+| restdb             |
+| sys                |
+| test               |
+| testdb             |
+| testing            |
+| tst                |
++--------------------+
+22 rows in set (0.00 sec)
+
+mysql> USE TST;
+Database changed
+mysql> SHOW TABLES;
+Empty set (0.00 sec)
+
+mysql> CREATE TABLE TEST
+    -> (TID VARCHAR(10),
+    ->  TNAME VARCHAR(25));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> SHOW TABLES;
++---------------+
+| Tables_in_tst |
++---------------+
+| test          |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE DEPT
+     (DEPTNO VARCHAR(10) PRIMARY KEY,
+      DNAME  VARCHAR(25) NOT NULL,
+      LOC    VARCHAR(25) NOT NULL
+     );
+
+INSERT INTO DEPT VALUES('D1','MKTG','KOLKATA');
+
+mysql> SELECT * FROM DEPT;
++--------+-------+---------+
+| DEPTNO | DNAME | LOC     |
++--------+-------+---------+
+| D1     | MKTG  | KOLKATA |
++--------+-------+---------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO DEPT VALUES('D1','MKTG','KOLKATA');
+ERROR 1062 (23000): Duplicate entry 'D1' for key 'dept.PRIMARY'
+INSERT INTO DEPT VALUES('D2',NULL,'CHENNAI');
+
+CREATE TABLE STUDENT
+(ROLLNO  VARCHAR(10),
+ SNAME   VARCHAR(25) NOT NULL,
+ SPHNO   VARCHAR(10) NOT NULL,
+ DEPTNO  VARCHAR(10),
+ CONSTRAINT STUDENT_ROLLNO_PK PRIMARY KEY(ROLLNO),
+ CONSTRAINT STUDENT_DEPTNO_FK FOREIGN KEY(DEPTNO) REFERENCES DEPT(DEPTNO)
+);
+mysql> DESC STUDENT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| ROLLNO | varchar(10) | NO   | PRI | NULL    |       |
+| SNAME  | varchar(25) | NO   |     | NULL    |       |
+| SPHNO  | varchar(10) | NO   |     | NULL    |       |
+| DEPTNO | varchar(10) | YES  | MUL | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES('1','SUMAN','34434','D1');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> SELECT * FROM STUDENT;
++--------+-------+-------+--------+
+| ROLLNO | SNAME | SPHNO | DEPTNO |
++--------+-------+-------+--------+
+| 1      | SUMAN | 34434 | D1     |
++--------+-------+-------+--------+
+1 row in set (0.00 sec)
+ 
+INSERT INTO STUDENT VALUES('2','JAYANTA','7666','D3');
+mysql> DESC STUDENT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| ROLLNO | varchar(10) | NO   | PRI | NULL    |       |
+| SNAME  | varchar(25) | NO   |     | NULL    |       |
+| SPHNO  | varchar(10) | NO   |     | NULL    |       |
+| DEPTNO | varchar(10) | YES  | MUL | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES('2','SUMAN','34434','D3');
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`tst`.`student`, CONSTRAINT `STUDENT_DEPTNO_FK` FOREIGN KEY (`DEPTNO`) REFERENCES `dept` (`DEPTNO`))
+
+mysql> CREATE TABLE EMP
+    -> (EID VARCHAR(10)  PRIMARY KEY,
+    ->  ENAME VARCHAR(25) NOT NULL,
+    ->  EDESIG  VARCHAR(25) NOT NULL,
+    ->  SAL     DECIMAL,
+    ->  DNAME   VARCHAR(25)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> INSERT INTO EMP VALUES('E1','ARUP','CLERK',25000,'MKTG');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMP VALUES('E2','SUMAN','MANAGER',50000,'MKTG');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO EMP VALUES('E3','RAJAT','MANAGER',60000,'FINANCE');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMP VALUES('E4','ALOKE','ANALYST',40000,'FINANCE');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM EMP;
++-----+-------+---------+-------+---------+
+| EID | ENAME | EDESIG  | SAL   | DNAME   |
++-----+-------+---------+-------+---------+
+| E1  | ARUP  | CLERK   | 25000 | MKTG    |
+| E2  | SUMAN | MANAGER | 50000 | MKTG    |
+| E3  | RAJAT | MANAGER | 60000 | FINANCE |
+| E4  | ALOKE | ANALYST | 40000 | FINANCE |
++-----+-------+---------+-------+---------+
+4 rows in set (0.00 sec)
+RESTRICTION OF DATA
+================================
+IT IS DONE BY WHERE CLAUSE
+mysql> SELECT * FROM EMP WHERE EDESIG='MANAGER';
++-----+-------+---------+-------+---------+
+| EID | ENAME | EDESIG  | SAL   | DNAME   |
++-----+-------+---------+-------+---------+
+| E2  | SUMAN | MANAGER | 50000 | MKTG    |
+| E3  | RAJAT | MANAGER | 60000 | FINANCE |
++-----+-------+---------+-------+---------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM EMP WHERE EDESIG IN('MANAGER','ANALYST');
++-----+-------+---------+-------+---------+
+| EID | ENAME | EDESIG  | SAL   | DNAME   |
++-----+-------+---------+-------+---------+
+| E2  | SUMAN | MANAGER | 50000 | MKTG    |
+| E3  | RAJAT | MANAGER | 60000 | FINANCE |
+| E4  | ALOKE | ANALYST | 40000 | FINANCE |
++-----+-------+---------+-------+---------+
+3 rows in set (0.00 sec)
+IN OPERATOR
+=======================================
+SELECT * FROM EMP WHERE EDESIG IN('MANAGER','ANALYST');
+
+mysql> SELECT * FROM EMP WHERE EDESIG NOT IN('MANAGER','ANALYST');
++-----+-------+--------+-------+-------+
+| EID | ENAME | EDESIG | SAL   | DNAME |
++-----+-------+--------+-------+-------+
+| E1  | ARUP  | CLERK  | 25000 | MKTG  |
++-----+-------+--------+-------+-------+
+1 row in set (0.00 sec)
+AND OPERATOR
+=================================================================
+SELECT * FROM EMP WHERE EDESIG='MANAGER' AND SAL > 50000;
+mysql> SELECT * FROM EMP WHERE EDESIG='MANAGER' AND SAL > 50000;
++-----+-------+---------+-------+---------+
+| EID | ENAME | EDESIG  | SAL   | DNAME   |
++-----+-------+---------+-------+---------+
+| E3  | RAJAT | MANAGER | 60000 | FINANCE |
++-----+-------+---------+-------+---------+
+1 row in set (0.00 sec)
+mysql> SELECT * FROM EMP WHERE EDESIG='MANAGER' OR SAL > 50000;;
++-----+-------+---------+-------+---------+
+| EID | ENAME | EDESIG  | SAL   | DNAME   |
++-----+-------+---------+-------+---------+
+| E2  | SUMAN | MANAGER | 50000 | MKTG    |
+| E3  | RAJAT | MANAGER | 60000 | FINANCE |
++-----+-------+---------+-------+---------+
+2 rows in set (0.00 sec)
+
+LIKE OPERATOR
+===================================================================
+SELECT * FROM EM P WHERE ENAME LIKE 'A%';
+SELECT * FROM EM P WHERE ENAME LIKE '_R%';
+mysql> SELECT * FROM EMP WHERE ENAME LIKE '_R%';
++-----+-------+--------+-------+-------+
+| EID | ENAME | EDESIG | SAL   | DNAME |
++-----+-------+--------+-------+-------+
+| E1  | ARUP  | CLERK  | 25000 | MKTG  |
++-----+-------+--------+-------+-------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM EMP WHERE ENAME LIKE '%E';
++-----+-------+---------+-------+---------+
+| EID | ENAME | EDESIG  | SAL   | DNAME   |
++-----+-------+---------+-------+---------+
+| E4  | ALOKE | ANALYST | 40000 | FINANCE |
++-----+-------+---------+-------+---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM EMP WHERE ENAME LIKE '%A%';
++-----+-------+---------+-------+---------+
+| EID | ENAME | EDESIG  | SAL   | DNAME   |
++-----+-------+---------+-------+---------+
+| E1  | ARUP  | CLERK   | 25000 | MKTG    |
+| E2  | SUMAN | MANAGER | 50000 | MKTG    |
+| E3  | RAJAT | MANAGER | 60000 | FINANCE |
+| E4  | ALOKE | ANALYST | 40000 | FINANCE |
++-----+-------+---------+-------+---------+
+4 rows in set (0.00 sec)
+
+DML COMMANDS
+======================================================================================
+DELETE RECORDS
+====================================================================================
+DELETE FROM EMP WHERE  EID='E4';
+UPDATE DATA
+======================================================================
+UPDATE EMP SET ENAME='RAJATAVA',EDESIG='ANALYST',SAL=45000,DNAME='HR' WHERE EID='E3';
+COMMIT;
+HOW TO CREATE DUPLICATE TABLE
+================================================================================
+CREATE TABLE EMP1 AS SELECT * FROM EMP;
+CREATE A DUPLICATE TABLE WITHOUT DATA
+================================================================
+CREATE TABLE EMP2 AS SELECT * FROM EMP  WHERE 1=2;
+
+HIBERNATE
+==============================================================================
+ORM
+=============================
+HIBERNATE WITH JPA(JAVA PERSISTANCE API)
+=========================================
+1.MAVEN PROJECT
+2.DEPENDENCY ADDED
+ LOMBOK
+ MYSQL
+ HIBERNATE
+3.PERSISTENCE.XML===JDBC CONFIGUARTION WILL BE THERE
+SRC===MAIN==RESOURCES
+ META-INF FOLDER===PERSISTENCE.XML
+
+mysql> CREATE DATABASE HBSDB;
+
+ <persistence-unit name="AppDB">
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hbsdb" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="arindam" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+        </properties>
+    </persistence-unit>
+     
+</persistence>
+
+EntityTransaction tx=null;
+//READING THE JDBC CONFIGURATION FROM PERSISTANCE.XML FILE
+EntityManagerFactory emf=Persistence.createEntityManagerFactory("AppDB");
+//CREATE TABLE UPDATE TABLE
+EntityManager em=emf.createEntityManager();
+//TRANSACTION CREATED
+tx=em.getTransaction();
+//BEGIN THE TRANSACTION
+tx.begin();
+Customer cs1=new Customer("C1","ANUP","54545");
+//INSERT DATA AND CREATE THE TABLE
+em.persist(cs1);
+//SAVE THE DATA
+tx.commit();
+//close the connection
+emf.close();
+
+CLASS:EMPLOYEE
+TABLE:EMPLOYEE_MASTER
+EID==NUMBER===PRIMARY KEY===10===AUTO GENERATED
+ENAME===NOT NULL==25
+ESEDIG==COLUMN NAME DESIG===25
+SAL====DECIMAL
+JOINDT====DATE
+WORKHR===DATE AND TIME
+EMAIL
+RELATIONSHIP
+===================
+ONE TO ONE
+ONE TO MANY
+MANY TO ONE
+MANY TO MANY
+EQUI JOIN
+=================================================
+BOTH THE TABLES COMMON DATA
+
+mysql> SELECT C.CANDID,C.CANDNM,A.ADHARNO,A.CITY
+    -> FROM CANDIDATE C,ADHAR A
+    -> WHERE C.ADHAR_NO=A.ADHARNO;
++--------+--------+---------+---------+
+| CANDID | CANDNM | ADHARNO | CITY    |
++--------+--------+---------+---------+
+| C2     | ANUP   | 343434  | DELHI   |
+| C1     | RUPAM  | 656565  | KOLKATA |
++--------+--------+---------+---------+
+2 rows in set (0.00 sec)
+====================================================
+@Entity====TABLE NAME
+@Table===WHEN TABLE IS NOT CLASS NAME
+@Column====CHANGE THE COLUMN NAME AND MODIFY THE LENGTH OF THE COLUMN
+@Temporal====FOR DEALING WITH DATE AND DATE TIME
+@Id=========Primay Key
+@GeneratedValue====AUTO INCREMENT OF THE COLUMN
+EntityManagerFactory====READING THE PERSISTENCE.XML FILE
+EntityManager===========CREATE,UPDATE,DELETE OPRATION OF TABLE
+EntityTransaction==========FOR COMMIT ROLLBACK OPERATION
+pesistant()================SAVING DATA TO THE TABLE
+===================================================================================================
+CRUD OPERATION 
+======================================================================
 
 
 
