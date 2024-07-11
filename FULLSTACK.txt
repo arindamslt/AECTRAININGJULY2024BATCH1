@@ -640,8 +640,127 @@ EntityManager===========CREATE,UPDATE,DELETE OPRATION OF TABLE
 EntityTransaction==========FOR COMMIT ROLLBACK OPERATION
 pesistant()================SAVING DATA TO THE TABLE
 ===================================================================================================
+
+DATE:10.07.2024
+====================================================================================
 CRUD OPERATION 
-======================================================================
+===============================================================================
+INSERT,UPDATE,DELETE,FETCH
+HibernateCrudOprn
+FETCHING DATA USING HIBERNATE
+=======================================================
+1.JPQL===JAVA PERSISTENCE QUERY LANGUAGE===IT KNOWS CLASS ONLY
+    select p from Product p;
+
+2.HQL===HIBERNATE QUERY LANGUAGE==========IT KNOWS CLASS ONLY
+  from Product
+3.NATIVE SQL===NORMAL SQL=================IT KNOWS TABLE ONLY
+select * from product;
+
+LIMITATION OF SPRING
+=================================================================================
+1.WE NEED USE LOT OF DEPENDENCIES WITH COMPATABLE VERSION
+2.WE HAVE TO CONFIGURE LOT OF THINGS
+3.APPLICATON TO BE DEPLOYED IN EXTERNAL SERVER
+EX:TOMCAT,JBOSS,WEBLOGIC,WEBSPHERE
+SPRING BOOT
+=========================================================================================
+SPRING BOOT IS AN ARCHIETECTURAL STYLE WHICH IS WORK ON TOP OF THE SPRING
+ADVANTAGE
+==========================================
+1.STARTER DEPENDENCY
+===========================================
+RELATED JAR FILES OF DIFFERENT GROUP TOGETHER INTO SINGLE UNIT
+SPRING BOOT STARTER DEPENDENDENCY
+SPRING BOOT STARTER WEB
+2.AUTOCONFIGURATION
+===========================================================
+BY DEFAULT AUTO CONFIGURATION IS DISABLED
+@EnableAutoConfiguration
+3.EMBEDDED SERVER
+PURPOSE
+=====================
+RAPID APPLICATION DEVELOPMENT
+SPRING BOOT PROJECT
+=================================
+1.MAVEN
+2.SPRING INITIALIZER
+3.SPRING BOOT STARTER
+
+@SpringBootApplication
+=================================================================
+@EnableAutoConfiguration
+@ComponentSacn
+@Configuration
+WHY YML IS BETTER
+==========================================================================
+1.NO INDEX DUPLICATION TOOK PLACE
+2.IT IS MORE READABLE THAN PROPERTIES FILES
+==========================================================================
+SPRING BOOT JDBC 
+===========================================================================
+TABLE:ACCOUNT
+=============================================
+FIELDS     DATA TYPE     SIZE         CONSTRAINTS
+=====================================================
+ACCNO       VARCHAR       10          PRIMARY KEY
+CNAME       VARCHAR       25          NOT NULL
+BALANCE     DECIMAL
+=================================================================
+
+CREATE TABLE ACCOUNT
+(ACCNO  VARCHAR(10) PRIMARY KEY,
+ CNAME  VARCHAR(25) NOT NULL,
+ BALANCE  DECIMAL);
+LOMBOK
+MYSQL
+JDBC API
+
+JdbcTemplate
+update()
+queryForList()
+
+
+WEB APPLICATION USING SPRING BOOT
+==========================================================
+1.LOMBOK
+2.SPRING WEB====TOMCAT
+3.SPRING DEV TOOLS
+localhost:1004/show
+SPRING+HIBERNATE USING SPRING BOOT
+====================================================================================================================
+SPRING DATA JPA
+===========================================================================
+HERE TWO INTERFACES ARE THERE
+CrudRepository<T,ID>=======INTERFACE
+JpaRepository<T,ID>=======INTERFACE
+T==ENTITY CLASS NAME
+ID===PRIMARY KEY DATA TYPE
+save()
+findAll()
+findById()
+delete()
+
+JpaRepository<T,ID> extends CrudRepository<T,ID>
+save()
+findAll()
+findById()
+delete()
+DEPENDENCY
+================================
+1.LOMBOK
+2.SPRING DATA JPA
+3.MYSQL
+================================================
+SERVICE CLASS===============COM.ARINDAM.SERVICE
+REPOSITORY INTERFACE========COM.ARINDAM.REPOSITORY
+ENTITY CLASS=================COM.ARINDAM.ENTITY
+MAIN CLASS
+
+
+
+
+
 
 
 
