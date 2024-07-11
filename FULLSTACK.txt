@@ -757,6 +757,10 @@ REPOSITORY INTERFACE========COM.ARINDAM.REPOSITORY
 ENTITY CLASS=================COM.ARINDAM.ENTITY
 MAIN CLASS
 
+DATE:11.07.2024
+=========================================================================================
+
+
 
 
 
