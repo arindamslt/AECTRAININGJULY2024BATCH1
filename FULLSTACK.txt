@@ -760,9 +760,88 @@ MAIN CLASS
 DATE:11.07.2024
 =========================================================================================
 
+SPRING BOOT
+===========================
+1.SPRING APPLICATION
+2.READING PROPERTIES FILE
+3.READ YML FILE
+4.BOOT JDBC
+5.BOOT WEB
+6.SPRING BOOT DATA JPA
+============================================================================================
+RESTFULL WEBSERVICES
+===========================================================================================
+WEBSERVICE
+============================================================================
+IT IS USED TO COMMUNICATE BETWEEN TWO INTER OPERABLE APPLICATION
+===========================================================
+TYPES OF WEBSERICES
+============================================
+1.SOAP===SIMPLE ACCESS OBJECT PROTOCOL
+========================================================
+IT SUPPORT ONLY XML
+2.REST==REPRENTATIONAL STATE TRANSFER
+========================================
+SUPPORT BOTH XML AND JSON
+=================================================================================
+ACTION BASED URL
+=================================================
+http://abc.com/?id=1======> query parameter
+
+RESOURCE BASED URL
+=============================================
+http://abc.com/id=== path parameter
+=========================================================================
+HTTP METHOD
+=====================================================
+1.GET===GET THE DATA FROM SERVER
+2.POST===POST THE DATA TO THE SERVER
+3.PUT====UPDATE DATA INTO THE SERVER
+4.DELETE===DELETE DATA FROM THE SERVER
+===========================================================================
+HTTP STATUS CODE
+================================================================
+404======NO DATA FOUND
+500======INTERNAL SERVER ERROR
+200======OK
+=================================================================
+
+JSON==JAVA SCRIPT OBJECT NOTATION
+============================================================
+JSON
+================================================
+KEY VALUE PAIR
+{
+   "ID":100,
+   "NAME":"AYAN",
+   "PHNO":"54544554"
 
 
 
+}
+REST API TOOL
+=============================================================
+1.POSTMAN
+2.SWAGGER
+PROJECT NAME:BOOTRESTAPI
+DEPENDENCIES
+=======================
+1.LOMBOK
+2.MYSQL
+3.DATA JPA
+4.SPRING WEB
+5.SPRING BOOT DEV TOOLS
+http://localhost:1004/order/add
+{
+  "oid":"ord1",
+  "oqty":2,
+  "price":2000.00,
+  "cname":"ROBIN"
+}
+
+
+http://localhost:1004/order/add
+http://localhost:1004/order/del/ord1
 
 
 

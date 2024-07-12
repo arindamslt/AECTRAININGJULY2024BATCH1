@@ -20,4 +20,30 @@ private OrderRepository orepo;
 	{
 		return orepo.findAll();
 	}
+	public void deleteData(String orderid)
+	{
+		Order ord=orepo.findById(orderid).orElse(null);
+		if(ord!=null)
+		{
+			orepo.delete(ord);
+		}
+	}
+	public Order findByOrderid(String orderid)
+	{
+		Order ord=orepo.findById(orderid).orElse(null);
+		return ord;
+	}
+	public Order updateData(String orderid,Order o)
+	{
+		Order ord=orepo.findById(orderid).orElse(null);
+		if(o!=null)
+		{
+			ord.setOid(orderid);
+			ord.setOqty(o.getOqty());
+			ord.setPrice(o.getPrice());
+			ord.setCname(o.getCname());
+			orepo.save(ord);
+		}
+		return ord;
+	}
 }
