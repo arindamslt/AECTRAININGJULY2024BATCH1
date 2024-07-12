@@ -842,10 +842,357 @@ http://localhost:1004/order/add
 
 http://localhost:1004/order/add
 http://localhost:1004/order/del/ord1
+================================================================================================
+DATE:12.07.2024
+==================================================================================================
+FRONT END
+===================================================
+REACT JS
+=============================================================
+PREREQUISITE
+=================================
+HTML
+CSS
+JAVASCRIPT
+=====================================================================
+JAVASCRIPT
+=======================================================================
+JAVASCRIPT IS A PROGRAMMING LANGUAGE BECAUSE IT COMMUNICATE WITH DATABASE AND APPLICATION SERVER
+BEFORE 2010 IT WAS CALLED SCRIPTING LANGUAGE
+PURPOSE
+===========================================
+TO DEVELOP DYNAMIC USER INTERFACE
+TO PROVIDE VALIDATION BOTH CLIENT SIDE AS WELL AS SERVERSIDE
+COMMUNICATE TO FRONDEND AND BACKEND APPLICATION
+AREA
+======================
+1.WEBAPPLICATION
+2.MOBILE APPLICATION
+3.STAND ALONE APPLICATION
+4.ML APP
+HOW TO INSTALL
+================================
+1.NODE JS===JAVASCRIPT RUNTIME ENVIRONMENT
+2.IDE===VISUAL STUDIO CODE
+VARIABLE
+=============================
+NAMED STORAGE LOCATION
+PRIMITIVE TYPES===number,boolean,string,symbol,null,undefined
+NON PRIMITIVE TYPES==object
+var,let,cont
+var obj1={
+    id:1,
+    nm:'ROBIN',
+    phno:'454554'
+}
+FUNCTION
+==============================
+1.NORMAL FUNCTION
+2.PARAMETRISED FUNCTION
+3.FUNCTION WITH RETURN STATEMENT
+4.ANNONYMOUS FUNCTION
+5.CALLBACK FUNCTION
+6.HIGHER ORDER FUNCTION
+7.ARROW FUNCTION
+ANNONYMOUS FUNCTION
+=================================
+FUNCTION WITHOUT NAME
+function()
+{
+
+}
+
+//NORMAL FUNCTION
+function fn1()
+{
+    console.log("NORMAL FUNCTION");
+}
+fn1();
+
+C:\FrontEndApplication\js_practical> node .\function.js
+
+//PARAMETERISED FUNCTION
+function fn2(x,y)
+{
+ console.log(x,y);
+}
+fn2(10,20);
+//FUNCTION WITH RETURN STATEMENT
+function fn3(x,y)
+{
+   return(x+y);
+}
+var res=fn3(10,20);
+console.log(res);
+//ANNONYMOUS FUNCTION
+function fn4(f)
+{
+ console.log(f);
+ f();
+}
+//CALLING THE FUNCTION
+fn4(function(){
+var city='KOLKATA';
+console.log(city);
+}
+)
+//HIGER ORDER AND CALLBACK FUNCTION
+function print()
+{
+  var state='WB';
+  console.log(state);
+}
+
+function fn5(f)
+{
+   console.log(f);
+   f();
+}
+fn5(print);
+//FUNCTION EXPRESSION
+var result=function(){
+console.log("FUNCTION EXPRESSION");
+}
+result();
+ARRAY
+=================================================================================
+var arr=[100,200,300,400];
+console.log(arr);
+console.log(typeof arr);
+
+//RANGE OF VALUES IN ARRAY
+var newArray=arr.slice(2,4);
+console.log(newArray);
+FOREACH()===TRAVERSE THE ELEMENT ARRAY
+MAP()========TRAVERSE THE ELEMENT IN ARRAY AND DOING SOME OPERATION AND IT WILL RETURN NEW ARRAY
+FILTER()
+
+//FOR EACH METHOD
+arr.forEach(function(element,index){
+    console.log(index,element);
+})
+
+//MAP() FUNCTION
+var newArray1=arr.map(function(element,index){
+    return element*10;
+})
+console.log(newArray1);
 
 
+//FILTER() FUNCTION
+var newArray2=arr.filter(function(element,index){
+    return element>200;
+})
+console.log(newArray2);
+
+var product={
+    pid:'P1',
+    pname:'TV',
+    pqty:5,
+    price:25000.00
+}
+console.log(product);
+console.log(product.pname,product.price);
+
+//ADD A ELEMENT IN OBJECT
+product.company='SAMSUNG';
+console.log(product);
+//UPDATE DATA IN OBJECT
+product.price=32000.00;
+console.log(product);
+//DELETE ELEMENT IN OBJECT
+delete product.company;
+console.log(product);
+
+//NESTED OBJECT
+var employee={
+    eid:'E1',
+    ename:'AYAN',
+    desig:'MANAGER',
+    phno:'545445',
+    address:{
+       plotno:'AD10',
+       streetnm:'SALTLAKE CITY',
+       pincode:'700091',
+       area:{
+        ps:'BIDHANNAGAR',
+        state:'WB'
+       } 
+    }
+}
+console.log(employee);
+ename,desig,phno,plotno,pincode,ps
+employee.ename,employee.desig,employee.address.plotno,employee.address.pincode,employee.address.area.ps;
 
 
+//OBJECT WITH FUNCTION
+var products={
+    pid:'P1',
+    pname:'TV',
+    pqty:5,
+    price:32000.00,
+    totalcost:function(){
+        console.log(this.price*this.pqty);
+    }
+}
+console.log(products.pname,products.pqty,products.price);
+products.totalcost();
+
+============================================================================================
+ES6====ECMA SCRIPT.IT IS INTRODUCED IN 2015.LOT OF CHANGES MADE TO THE JAVASCRIPT
+=======================================================================================
+1.SPREAD OPERATOR
+2.REST PARAMATER
+3.LET VS VAR VS CONST
+4.DESTERUCTURE OF OBJECT
+5.ARROW FUNCTION
+   ARROW FUNCTION WITH FOREACH LOOP
+   ARROW FUNCTION WITH MAP()
+   ARROW FUNCTION WITH FILTER()
+6.PROMISE OBJECT
+================================================================================================
+//SPREAD OPRATOR(COPY ONE OBJECT VALUE TO ANOTHER OBJECT AND ALSO MODIFY THE SOURCE OBJECT DATA IN
+//NEW OBJECT)
+var obj1={
+    id:100,
+    name:'ROBIN',
+    phno:'23333',
+    dept:'HR'
+}
+console.log(obj1);
+var obj2={
+    ...obj1,
+    dept:'FINANCE'
+}
+console.log(obj2);
+//REST PARAMETER
+function  fn1(x,y)
+{
+  console.log(x,y);
+}
+fn1(10,20);
+fn1(10,20,30,40);
+
+function  fn1(x,y,...data)
+{
+  console.log(x,y);
+  console.log(data);
+}
+fn1(10,20);
+fn1(10,20,30,40);
+//DESTRUCTING OF OBJECT
+var obj1={
+  rollno:1,
+  sname:'RUPAM',
+  phno:'45545',
+  dept:'CSE'
+}
+console.log(obj1);
+var{sname,dept}=obj1;
+console.log(sname,dept);
+================================================================
+LET VS VAR VS CONST
+====================================================================
+
+//LET VS VAR VS CONST
+/*function fn3()
+{
+  if(true)
+  {
+    var x=25;
+    console.log(x);
+  }
+  console.log(x);
+}*/
+=================================
+/*function fn3()
+{
+  if(true)
+  {
+    let x=25;
+    console.log(x);
+  }
+  console.log(x);
+}*/
+function fn3()
+{
+  if(true)
+  {
+    const x=25;
+    console.log(x);
+    x=40;
+  }
+  }
+
+fn3()
+=========================================================================
+ARROW FUNCTION
+=========================================================================
+
+//ARROW Function
+function fn5()
+{
+  console.log("NORMAL FUNCTION");
+}
+fn5();
+const fn6=()=>{
+  console.log("ARROW FUNCTION");
+}
+fn6();
+==========================================================================
+//ARROW FUNCTION FOR EACH LOOP
+var arr=[100,200,300,400,500,600];
+
+arr.forEach(function(element,index){
+    console.log(index,element);
+})
+arr.forEach((element,index)=>{
+console.log(index,element);
+ })
+================================================
+ARROW WITH MAP FUNCTION
+=================================================
+//MAP() FUNCTION
+var newArray1=arr.map(function(element,index){
+    return element*10;
+})
+var newArray1=arr.map((element,index)=>{
+    return element*10;
+})
+
+console.log(newArray1);
+//FILTER() FUNCTION
+var newArray2=arr.filter((element,index)=>{
+    return element>200;
+})
+console.log(newArray2);
+==========================================================================
+DOM
+============================================================
+DOCUMENT OBJECT MODEL
+=========================================
+HTML DOCUMENT IS CONVERTED INTO OBJECTS CLLED NODES AND IT WILL FORM A TREE LIKE DATA STRUCTURE IS CALLED DOM.
+HTML DOCUMENT===BROWSER ENGINE===COMPILE====BYTES===TOKENS===NODES
+
+
+HOW CAN ACCESS DOM ELEMENT
+==================
+ID
+TAG ATTRIBUTE
+CLASS
+NAME
+<script>
+        const changeToH2=()=>{
+           var h2Ref=document.getElementById("domh");
+           h2Ref.innerText="DOM MANIPULATION BY JAVASCRIPT";
+        }
+    </script>
+<button onclick="changeToH2()">CHANGETOH2</button>&nbsp;&nbsp;
+
+npx create-react-app reactappdemo
+
+C:\FrontEndApplication> cd reactappdemo
+C:\FrontEndApplication\reactappdemo>npm start
 
 
 
