@@ -1194,6 +1194,84 @@ npx create-react-app reactappdemo
 C:\FrontEndApplication> cd reactappdemo
 C:\FrontEndApplication\reactappdemo>npm start
 
+DATE:13.07.2024
+================================================================================================
+REACT JS
+===================================================================================
+REACT IS A JAVASCRIPT LIBRARY.JAVASCRIPT LIBRARY IS A COLLECTION CLASSES AND FUNCTIONS
+PURPOSE
+=====================================
+TO CREATE USER INTERFACE
+REACT+OTHER LIBRARIES====FRONT END APPLICATION
+======================================================================
+JAVASCRIPT
+============================================================
+var btnRef=document.createElement("button");
+btnRef.innerText="CLICKED";
+document.elementById("root").appendChild(btnRef);
+==============================================================
+REACT
+=========================================
+React.createElement("button",null,"CLICKED");=====TERMED AS REACT ELEMENT
+===     ============
+LIBRARY  FUNCTION
+ReactDOM.render(document.getElementByID("root"));
+REACT ELEMENT====REACTDOM====DOM
+JSX====99% SIMILAR TO HTML
+=======================================
+JSX====COMPILE===BABEL===REACT ELEMENT====REACT DOM=====DOM
+
+
+REACT APPLICATION
+============================================
+WITHOUT CRA TOOL
+WITH CRA TOOL
+================================================================================
+REACT COMPONENT
+==============================
+TWO TYPES
+==============================
+CLASS COMPONENT
+FUNCTIONAL COMPONENT
+RULES
+==========================
+JSX SHOULD BE WRITTEN WITHIN THE JAVASCRIPT FUNCTION
+FUNCTIONAL COMPONENT RULES
+================================
+IT IS A JAVASCRIPT FUNCTION  STARTED WITH CAPITAL LETTER
+EX:CreateUi()
+CRA
+==============================
+CREATE REACT APP
+IT CAN BE INSTALLED TWO WAYS
+====================================
+npm create-react-app=====INSTALL THE CRA TOOL
+npx  create-react-app=====RUN CRA TOOL
+===========================================================================
+SINGLE PAGE APPLICATION
+REACT HOOK
+====================================================================================
+REACT HOOK IS A JAVASCRIPT FUNCTION WHICH IS USED FOR SPECIAL PURPOSES
+REACT HOOK START use<name>
+EX:
+USESTATE
+USEEFFECT
+USEREF
+USECALLBACK
+USECONTEXT
+USESTATE
+=======================================================
+usestate()===RETURN variable,function
+RULES OF THE REACT HOOK
+============================
+IT IS TO BE CREATED WITH IN FUNCTIONAL COMPONENT
+HOOK SHOULD BE DECLARED AT THE TOP FUNCTIONAL COMPONENT
+HOOK NEVER BEEN CALLED WITHIN JSX
+
+
+
+
+
 
 
 
