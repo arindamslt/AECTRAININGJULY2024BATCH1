@@ -1,0 +1,27 @@
+FILTER DATA
+======================================================
+========================================================
+const filterData=(event)=>{
+        if(event.target.value==='male')
+        {
+           setUser(data.filter((usr)=>usr.gender==='male'));
+        }
+        else if(event.target.value==='female')
+        {
+           setUser(data.filter((usr)=>usr.gender==='female'));
+        }
+        else{
+           setUser(data);
+        }
+       }
+==============================================================================
+ {
+        user.length>0 &&(
+            <div>
+                <input type="radio" name="gender" defaultChecked value="all" onChange={filterData}/>ALL
+                <input type="radio" name="gender" value="male" onChange={filterData}/>MALE
+                <input type="radio" name="gender" value="female" onChange={filterData}/>FEMALE
+            </div>
+        )
+      }
+=====================================================================================
