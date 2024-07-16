@@ -1278,10 +1278,66 @@ HTML,CSS,JAVASCRIPT                                 REACTJS
 
 </style>
 onclick="addData()"                               onClick={addData}
-===============================================================================
+=================================================================================
 
 CONDITIONAL RENDERING
+==================================================================================
+AXIOS
+=================================================================================
+REACT+AXIOS LIBRARY===COMMUNICATE WITH EXTERNAL ENVIRONMENT
 ===========================================================================
+//PROMISE Object
+var promise=new Promise((resolve,reject)=>{
+  var s1="ARUP";
+  var s2="ARUP";
+  if(s1===s2)
+  {
+    resolve();
+  }
+  else{
+    reject();
+  }
+
+})
+promise.then((res)=>{
+  res="BOTH ARE EQUAL";
+  console.log(res);
+})
+.catch((error)=>{
+  error="BOTH ARE NOT EQUAL";
+  console.log(error);
+})
+
+https://randomuser.me/api/?results=20
+
+USEEFFECT
+===============================
+IF YOU WANT TO LOAD ALL DATA INTO THE BROWSW WHEN THE PERTICULAR LINK WILL BE OPEN
+THEN WE WILL USE USEEFFECT
+================================================================================================
+REACT ELEMENT
+FUNCTIONAL ELEMEMT
+JSX
+REACT HOOKS
+===========================
+USESTATE
+USEEFFECT
+USECONTEXT
+==============================
+PROPS
+PROPS  DRILLING
+AXIOS
+=====================================================
+ROUTING
+NESTED ROUTING
+USEREF
+USENAVIGATE
+USECALLBACK
+CUSTOM HOOK
+=====================================================
+REDUX
+==============================================
+
 
 
 
