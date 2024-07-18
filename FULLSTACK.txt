@@ -1361,6 +1361,25 @@ USEREF
 ================================================================================
 INTEGRADE SPRING BOOT WITH REACT JS===FULL STACK APPLICATION
 ======================================================================
+DATE:18.07.2024
+====================================================================================
+SPRING BOOT WITH REACT JS INTEGRATION USING PROJECT
+===========================================================
+FROND END===REACT JS
+BACKEND======SPRING BOOT
+DATABASE======MYSQL
+
+SPRING BOOT PROJECT
+=================================
+PROJECT NAME:FoodApp
+=================================
+DEPENDENCY
+====================
+LOMBOK
+MYSQL CONNECTOR
+SPRING WEB
+SPRING BOOT DATA JPA
+SPRING BOOT DEV TOOLS
 
 
 
